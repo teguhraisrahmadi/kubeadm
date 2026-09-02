@@ -57,7 +57,7 @@ Options:
   -h, --help                   Show this help message.
 ```
 
-### Debian
+### ꩜ Debian
 - Set the control-plane IP address
 ```
 curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/debian/master.sh | bash -s -- --control-plane-ip "10.10.x.x"
@@ -67,7 +67,7 @@ curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/debia
 curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/debian/master.sh | bash
 ```
 
-### Ubuntu
+### 🐧 Ubuntu
 - Set the control-plane IP address
 ```
 curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/ubuntu/master.sh | bash -s -- --control-plane-ip "10.10.x.x"
@@ -77,7 +77,7 @@ curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/ubunt
 curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/ubuntu/master.sh | bash
 ```
 
-### Rocky Linux
+### ⛰️ Rocky Linux
 - Set the control-plane IP address
 ```
 curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/rocky/master.sh | bash -s -- --control-plane-ip "10.10.x.x"
@@ -111,7 +111,7 @@ Before using it in a production environment, review the script carefully and mak
 
 Always understand what a script does before running it with sudo or root privileges.
 
-## Join Node
+## 🛠️ Join Node
 Create token, discovery-token-ca-cert-hash, and control-plane certificate-key. Please run all of this command in master node:
 - token
 ```
@@ -130,7 +130,7 @@ sudo kubeadm init phase upload-certs --upload-certs 2>&1 \
     | awk '/Using certificate key:/{getline; print; exit}'
 ```
 
-## Joining Master Node
+### ⚙️ Joining Master Node
 - Run this command in new master node
 ```
 sudo kubeadm join <control-plane-endpoint> \
@@ -140,7 +140,7 @@ sudo kubeadm join <control-plane-endpoint> \
     --certificate-key <certificate-key>
 ```
 
-## Joining Worker Node
+### ⚙️ Joining Worker Node
 - Run this command in new master node
 ```
 sudo kubeadm join <control-plane-endpoint> \
