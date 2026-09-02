@@ -44,8 +44,52 @@ Run the script
 ```
 
 ## 🚀 Getting Started
+### Options
+```
+Usage:
+  bash master.sh [--control-plane-ip IP] [--control-plane-port PORT]
+
+Options:
+  --control-plane-ip           Set the control-plane IP address (without port), e.g. 10.10.10.10.
+                               If not provided and an interactive terminal is available, 
+                               the script will prompt for it (up to 3 attempts).
+  --control-plane-port         Override the API server port (default: ${CONTROL_PLANE_ENDPOINT_PORT})
+  -h, --help                   Show this help message.
 ```
 
+### Debian
+- Set the control-plane IP address
+```
+curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/debian/master.sh | bash -s -- --control-plane-ip "10.10.x.x"
+```
+- Interactive
+```
+curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/debian/master.sh | bash
+```
+
+### Ubuntu
+- Set the control-plane IP address
+```
+curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/ubuntu/master.sh | bash -s -- --control-plane-ip "10.10.x.x"
+```
+- Interactive
+```
+curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/ubuntu/master.sh | bash
+```
+
+### Rocky Linux
+- Set the control-plane IP address
+```
+curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/rocky/master.sh | bash -s -- --control-plane-ip "10.10.x.x"
+```
+- Interactive
+```
+curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/rocky/master.sh | bash
+```
+
+### Spesific Version
+```
+curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/v1.3x.x/rocky/master.sh | bash
 ```
 
 ## 🚩 Package Version
