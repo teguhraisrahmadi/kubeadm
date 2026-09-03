@@ -90,11 +90,12 @@ curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/debia
 
 ## Requirements
 Before running the script, make sure you have:
-- A Linux-based operating system (Debian, Ubuntu, Rocky Linux)
-- Root or sudo privileges
-- An active internet connection
-- A supported environment for Kubernetes
-- Sufficient system resources for running Kubernetes (2 CPU 4 GB RAM)
+- **Operating system:** Debian, Ubuntu, or Rocky Linux
+- **Privileges:** Root access or `sudo` privileges
+- **Internet:** An active internet connection
+- **Required tools:** `curl` must be installed and available in the system `PATH`
+- **Environment:** A supported environment for running Kubernetes
+- **System resources:** At least **2 CPU cores and 4 GB RAM**
 
 ## ⚠️ Disclaimer
 This project is intended primarily for learning, development, testing, and lab environments.
@@ -134,7 +135,7 @@ sudo kubeadm join <control-plane-ha-endpoint> \
 ```
 
 ### ⚙️ Joining Worker Node
-- Run this command in new master node
+- Run this command in new worker node
 > Please change <**control-plane-endpoint**> to <**control-plane-ha-endpoint**> when using a master HA setup
 ```
 sudo kubeadm join <control-plane-endpoint> \
