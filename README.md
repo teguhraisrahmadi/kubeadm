@@ -55,7 +55,7 @@ Options:
   -h, --help                   Show this help message.
 ```
 
-### Installation
+### Installation (Debian Default)
 - Master
 ```
 curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/debian/master.sh | bash
