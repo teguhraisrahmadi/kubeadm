@@ -1,20 +1,18 @@
-# EZ Kubernetes Installation **(EZKI)**
+# Kubernetes EZ Installation **(KubeEZ)**
 
-> **Making Kubernetes installation EZ, one script at a time. 🚀**
+> *Making Kubernetes installation EZ, one script at a time. 🚀*
 
 Simple and automated Kubernetes installation script using **kubeadm**. This project simplifies the Kubernetes installation process by automatically installing the required packages, dependencies, and system configurations with a **single script execution**. No need to manually install and configure everything step by step. Just run the script and let it handle the setup.
 
-## ✨ Features
+## Features
+- **One-shot installation** — install Kubernetes with a single script
+- **Automatic dependency installation** — required packages are installed automatically
+- **System configuration** — prepares the system for Kubernetes
+- **kubeadm-based** — uses the official Kubernetes bootstrap tool
+- **Less manual work** — reduces repetitive installation and configuration steps
+- **Simple & beginner-friendly** — designed to make Kubernetes installation easier
 
-- 🚀 **One-shot installation** — install Kubernetes with a single script
-- 📦 **Automatic dependency installation** — required packages are installed automatically
-- ⚙️ **System configuration** — prepares the system for Kubernetes
-- 🧩 **kubeadm-based** — uses the official Kubernetes bootstrap tool
-- ⏱️ **Less manual work** — reduces repetitive installation and configuration steps
-- 🛠️ **Simple & beginner-friendly** — designed to make Kubernetes installation easier
-
-## 🎯 Why EZ Kubernetes?
-
+## Why KubeEZ?
 Setting up Kubernetes manually can involve multiple steps, including installing dependencies, configuring the system, and installing Kubernetes components. This project aims to make that process as simple as possible.
 
 ### Manual Setup
@@ -31,19 +29,19 @@ Configure kubelet
     ↓
 Initialize Kubernetes
     ↓
-😵 Lots of steps
+Lots of steps
 ```
 
 ### With EZ Kubernetes Installation
 ```
 Run the script
       ↓
-🚀 Kubernetes Setup
+Kubernetes Setup
       ↓
-☸️ Done!
+Kubernetes Done!
 ```
 
-## 🚀 Getting Started
+## Getting Started
 ### Options
 ```
 Usage:
@@ -57,46 +55,40 @@ Options:
   -h, --help                   Show this help message.
 ```
 
-### ꩜ Debian
-- Set the control-plane IP address
-```
-curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/debian/master.sh | bash -s -- --control-plane-ip "10.10.x.x"
-```
-- Interactive
+### Installation
+- Master
 ```
 curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/debian/master.sh | bash
 ```
-
-### 🐧 Ubuntu
-- Set the control-plane IP address
+- Master HA
 ```
-curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/ubuntu/master.sh | bash -s -- --control-plane-ip "10.10.x.x"
+curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/debian/master-ha.sh | bash
 ```
-- Interactive
+- Worker
 ```
-curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/ubuntu/master.sh | bash
+curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/debian/worker.sh | bash
 ```
 
-### ⛰️ Rocky Linux
-- Set the control-plane IP address
+### Another Option
+- Spesific kubernetes version
 ```
-curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/rocky/master.sh | bash -s -- --control-plane-ip "10.10.x.x"
+curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/v1.3x.x/debian/master.sh | bash
 ```
-- Interactive
+- Spesific OS version
+> Please change <**os**> to debian, ubuntu or rocky
 ```
-curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/rocky/master.sh | bash
+curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/v1.3x.x/<os>/master.sh | bash
+```
+- With control-plane or load balancer ip
+```
+curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/main/debian/master.sh | bash -s -- --control-plane-ip "10.10.x.x"
 ```
 
-### Spesific Version
-```
-curl -fsSL https://raw.githubusercontent.com/teguhraisrahmadi/kubeadm/v1.3x.x/rocky/master.sh | bash
-```
-
-## 🚩 Package Version
+## Package Version
 - Kubernetes 1.37
 - Cilium 1.20.1
 
-## 📋 Requirements
+## Requirements
 Before running the script, make sure you have:
 - A Linux-based operating system (Debian, Ubuntu, Rocky Linux)
 - Root or sudo privileges
