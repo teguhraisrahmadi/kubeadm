@@ -124,8 +124,9 @@ sudo kubeadm init phase upload-certs --upload-certs 2>&1 \
 
 ### ⚙️ Joining Master Node
 - Run this command in new master node
+> Please change <**control-plane-ha-endpoint**> to master load balancer endpoint (haproxy, nginx, etc)
 ```
-sudo kubeadm join <control-plane-endpoint> \
+sudo kubeadm join <control-plane-ha-endpoint> \
     --token <token> \
     --discovery-token-ca-cert-hash <hash> \
     --control-plane \
@@ -134,6 +135,7 @@ sudo kubeadm join <control-plane-endpoint> \
 
 ### ⚙️ Joining Worker Node
 - Run this command in new master node
+> Please change <**control-plane-endpoint**> to <**control-plane-ha-endpoint**> when using a master HA setup
 ```
 sudo kubeadm join <control-plane-endpoint> \
     --token <token> \
